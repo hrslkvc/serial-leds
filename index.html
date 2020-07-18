@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>LED control center</h1>
+            <div class="buttons">
+                <button type="button" class="button" data-active="0">1</button>
+                <button type="button" class="button" data-active="0">2</button>
+                <button type="button" class="button" data-active="0">3</button>
+            </div>
+        </div>
+        <script>
+            const buttons = document.querySelectorAll(".button");
+
+            buttons.forEach((button) =>
+                button.addEventListener("click", function () {
+                    const value = 1 - this.getAttribute("data-active");
+                    this.setAttribute("data-active", value);
+
+                    this.style.backgroundColor = value ? "aqua" : "white";
+
+                    const values = [...buttons].map((button) =>
+                        button.getAttribute("data-active")
+                    );
+                    console.log(values);
+
+                    fetch("http://localhost:8080/values", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(values),
+                    });
+                })
+            );
+        </script>
+    </body>
+</html>
