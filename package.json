@@ -1,0 +1,24 @@
+{
+  "name": "serial-leds",
+  "version": "1.0.0",
+  "description": "Simple test of the interaction between a node app and an arduino through the serial communication protocol",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serialport": "^8.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrslkvc/serial-leds.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrslkvc/serial-leds/issues"
+  },
+  "homepage": "https://github.com/hrslkvc/serial-leds#readme"
+}
