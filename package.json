@@ -4,7 +4,7 @@
   "description": "Simple test of the interaction between a node app and an arduino through the serial communication protocol",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "serialport": "^8.0.7"
   },
   "devDependencies": {},
